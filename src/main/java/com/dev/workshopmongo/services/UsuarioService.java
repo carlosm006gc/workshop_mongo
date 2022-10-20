@@ -33,4 +33,8 @@ public class UsuarioService {
 	public Usuario fromDto(UsuarioDto usuarioDto) {
 		return new Usuario(usuarioDto.getId(),usuarioDto.getNome(), usuarioDto.getEmail());
 	}
+	public void delete(String id) {
+		findById(id);
+		repository.deleteById(id);
+	}
 }
