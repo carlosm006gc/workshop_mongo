@@ -46,12 +46,20 @@ public class UsuarioController {
 
 		return ResponseEntity.created(uri).build();
 	}
-	
+
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<Void> update(@RequestBody UsuarioDto usuarioDto, @PathVariable String id) {
+		Usuario usuario = service.fromDto(usuarioDto);
+		usuario.setId(id);
+		usuario = service.update(usuario);
+		return ResponseEntity.noContent().build();
+
+	}
+
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Void> delete(@PathVariable String id){
+	public ResponseEntity<Void> delete(@PathVariable String id) {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
-		
 	}
 
 }
