@@ -1,10 +1,13 @@
 package com.dev.workshopmongo.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import com.dev.workshopmongo.dto.AutorDto;
+import com.dev.workshopmongo.dto.ComentarioDTO;
 
 public class Post implements Serializable {
 
@@ -16,6 +19,8 @@ public class Post implements Serializable {
 	private String corpo;
 
 	private AutorDto autor;
+
+	private List<ComentarioDTO> comentarios = new ArrayList<>();
 
 	public Post() {
 	}
@@ -67,6 +72,14 @@ public class Post implements Serializable {
 
 	public void setAutor(AutorDto autor) {
 		this.autor = autor;
+	}
+
+	public List<ComentarioDTO> getComentarios() {
+		return comentarios;
+	}
+
+	public void setComentarios(List<ComentarioDTO> comentarios) {
+		this.comentarios = comentarios;
 	}
 
 	@Override
