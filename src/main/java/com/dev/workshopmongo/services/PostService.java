@@ -1,5 +1,6 @@
 package com.dev.workshopmongo.services;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,5 +25,10 @@ public class PostService {
 		Optional<Post> post = postRepository.findById(id);
 		return post.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
 	}
-	
+
+	public List<Post> fullSearch(String texto, Date minData, Date maxData) {
+		maxData = new Date(maxData.getTime() + 24 * 60 * 60 * 1000);
+		return postRepository.fullSearch(texto, minData, maxData);
+	}
+
 }

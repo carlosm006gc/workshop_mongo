@@ -41,7 +41,7 @@ public class Instantiation implements CommandLineRunner {
 
 		Post post1 = new Post(null, sdf.parse("21/03/2018"), "Partiu viagem", "Vou viajar para São Paulo. Abraços!",
 				new AutorDto(maria));
-		Post post2 = new Post(null, sdf.parse("2018/03/23"), "Bom dia", "Acordei feliz hoje!", new AutorDto(maria));
+		Post post2 = new Post(null, sdf.parse("23/03/2018"), "Bom dia", "Acordei feliz hoje!", new AutorDto(maria));
 
 		ComentarioDTO c1 = new ComentarioDTO("Boa viagem mano!",sdf.parse("21/03/2018"), new AutorDto(alex));
 		ComentarioDTO c2 = new ComentarioDTO("Aproveite!",sdf.parse("22/03/2018"), new AutorDto(bob));
